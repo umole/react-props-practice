@@ -4,12 +4,26 @@ import Card from "./card";
 import contacts from "../contacts";
 import Avatar from "./Avatar";
 
+function contactCard(contact) {
+  return(
+    <Card 
+      name= {contact.name}
+      imgURL= {contact.imgURL}
+      phone= {contact.phone}
+      email= {contact.email}
+    />
+  )
+}
+
 function App() {
   return (
     <div>
       <h1 className="heading">My Contacts</h1>
       <Avatar imgURL={contacts[0].imgURL} />
        
+
+       {contacts.map(contactCard)}
+
       {/* <Card 
         name={contacts[0].name}
         imgURL={contacts[0].imgURL}
